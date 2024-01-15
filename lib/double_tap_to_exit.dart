@@ -32,8 +32,8 @@ class _DoubleTapToExitState extends State<DoubleTapToExit> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return BackButtonListener(
+      onBackButtonPressed: () async {
         DateTime now = DateTime.now();
         if (currentBackPressTime == null ||
             now.difference(currentBackPressTime!) >
